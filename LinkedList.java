@@ -3,19 +3,19 @@ public class LinkedList<T> implements List<T> {
 	private Node head;
 	private int size;
 	
-	private class Node<T> {
+	private class Node {
 		private T data;
 		private Node next;
 		
 		Node(T data) {
 			this.data = data;
-			next = null;
+			this.next = null;
 		}
 	}
 	
 	public LinkedList() {
 		this.head = new Node(null);
-		size = 0;
+		this.size = 0;
 	}
 
 	public void add(T item) {

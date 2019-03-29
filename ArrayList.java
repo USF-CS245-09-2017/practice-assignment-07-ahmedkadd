@@ -5,11 +5,13 @@ public class ArrayList<T> implements List<T> {
 	private int size;
 	private final int DEFAULT_SIZE = 10;
 	
+	/** Creates an ArrayList with an internal array of size 10 */
 	public ArrayList() {
 		arr = (T[]) new Object[DEFAULT_SIZE];
 		size = 0;
 	}
 
+	/** Adds the item to the end of the ArrayList */
 	public void add(T item) {
 		if (size == arr.length) {
 			arr = Arrays.copyOf(arr, arr.length * 2);
@@ -18,6 +20,7 @@ public class ArrayList<T> implements List<T> {
 		arr[size++] = item;
 	}
 
+	/** Adds the item at the specified position */
 	public void add(int pos, T item) {
 		if (pos > size || pos < 0) {
 			throw new ArrayIndexOutOfBoundsException();
@@ -35,6 +38,7 @@ public class ArrayList<T> implements List<T> {
 		size++;
 	}
 
+	/** Returns the item at the specified position */
 	public T get(int pos) {
 		if (pos >= size || pos < 0) {
 			throw new ArrayIndexOutOfBoundsException();
@@ -43,6 +47,7 @@ public class ArrayList<T> implements List<T> {
 		return arr[pos];
 	}
 
+	/** Removes and returns the item at the position */
 	public T remove(int pos) {
 		if (pos >= size|| pos < 0) {
 			throw new ArrayIndexOutOfBoundsException();
@@ -59,6 +64,7 @@ public class ArrayList<T> implements List<T> {
 		
 	}
 
+	/** Returns the size of the ArrayList */
 	public int size() {
 		return this.size;
 	}
